@@ -19,8 +19,10 @@ def is_prime_normal_solution(number):
 def is_prime_advance_solution(number):
     if number <= 1:
         return False
-    if number == 2:
+    elif number <= 3:
         return True
+    elif not number % 2:
+        return False
     max_range = int(math.sqrt(number)) + 1
     for counter in range(3, max_range, 2):
         if not number % counter:
@@ -30,7 +32,7 @@ def is_prime_advance_solution(number):
 
 if __name__ == "__main__":
     import time
-    number = 3
+    number = 9999999111111112
     print("is_prime_normal_solution: {} ".format(number), end=' ')
     start = time.time()
     print(is_prime_normal_solution(number), end=' ')
